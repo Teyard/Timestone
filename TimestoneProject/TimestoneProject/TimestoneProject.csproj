@@ -59,13 +59,13 @@
     <Compile Include="Engine\Entities\Player.cs" />
     <Compile Include="Engine\GameInstance.cs" />
     <Compile Include="Engine\RNGesus.cs" />
+    <Compile Include="Engine\Zones\Board.cs" />
     <Compile Include="Engine\Zones\Deck.cs" />
     <Compile Include="Engine\Zones\DiscardPile.cs" />
     <Compile Include="Engine\Zones\Equipped.cs" />
     <Compile Include="Engine\Zones\FaceUp.cs" />
     <Compile Include="Engine\Zones\Graveyard.cs" />
     <Compile Include="Engine\Zones\Hand.cs" />
-    <Compile Include="Engine\Zones\Removed.cs" />
     <Compile Include="Engine\Zones\Zone.cs" />
   </ItemGroup>
   <ItemGroup>

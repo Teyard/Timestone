@@ -49,10 +49,10 @@ namespace TimestoneProject.Engine.Zones
         /// <summary>
         /// Create a new zone with a maximum number of items.
         /// </summary>
-        /// <param name="maxCount">The maximum number of items in the zone.</param>
-        internal Zone(int maxCount)
+        /// <param name="capacity">The maximum number of items in the zone.</param>
+        internal Zone(int capacity)
         {
-            items = new List<T>(maxCount);
+            items = new List<T>(capacity);
             Items = new ReadOnlyCollection<T>(items);
             isUnlimited = false;
         }
@@ -168,7 +168,7 @@ namespace TimestoneProject.Engine.Zones
             }
             return peek;
         }
-
+        
         /// <summary>
         /// Get an item at a random index in the zone's item list. The item is removed from the zone.
         /// </summary>
@@ -176,6 +176,16 @@ namespace TimestoneProject.Engine.Zones
         internal T PullRandom()
         {
             return Pull(RNGesus.Get.Next() % items.Count);
+        }
+
+        /// <summary>
+        /// Removes the first occurance of a specific item.
+        /// </summary>
+        /// <param name="item">The item to remove.</param>
+        /// <returns>Return true if the item was removed, otherwise false regardless of reason.</returns>
+        internal bool Remove(T item)
+        {
+            return items.Remove(item);
         }
 
         /// <summary>

@@ -1,10 +1,10 @@
-﻿using TimestoneProject.Data.Enums;
+﻿using TimestoneProject.Data.Collection;
 
 namespace TimestoneProject.Engine.Entities.Cards
 {
     public class Minion : Card
     {
-        public Minion(Player owner) : base(owner)
+        public Minion(Player owner, SimpleCard minion) : base(owner, minion)
         {
         }
     }

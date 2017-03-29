@@ -1,4 +1,5 @@
 ﻿using System;
+using TimestoneProject.Data.Collection;
 using TimestoneProject.Data.Enums;
 
 namespace TimestoneProject.Engine.Entities.Cards
@@ -6,7 +7,7 @@ namespace TimestoneProject.Engine.Entities.Cards
     public class Card : Entity
     {
 
-        internal Card(Player owner) : base(owner, EntityType.Card)
+        internal Card(Player owner, SimpleCard card) : base(owner, EntityType.Card)
         {
 
         }

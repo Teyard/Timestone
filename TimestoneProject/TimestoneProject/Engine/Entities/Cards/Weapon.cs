@@ -1,14 +1,11 @@
-﻿namespace TimestoneProject.Engine.Entities.Cards
+﻿using TimestoneProject.Data.Collection;
+
+namespace TimestoneProject.Engine.Entities.Cards
 {
     public class Weapon : Card
     {
-        public Weapon(Player owner) : base(owner)
+        public Weapon(Player owner, SimpleCard weapon) : base(owner, weapon)
         {
-        }
-
-        override internal void Destroy()
-        {
-            base.Destroy();
         }
     }
 }

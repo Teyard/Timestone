@@ -28,6 +28,11 @@ namespace TimestoneProject.Engine.Entities
         public Player Opponent { get; private set; }
 
         /// <summary>
+        /// Get the player's board zone.
+        /// </summary>
+        public Board Board { get; private set; }
+
+        /// <summary>
         /// Get the player's deck zone.
         /// </summary>
         public Deck Deck { get; private set; }
@@ -67,6 +72,14 @@ namespace TimestoneProject.Engine.Entities
         {
             Id = idNext++;
             GameInstance = game;
+
+            Board = new Board();
+            Deck = new Deck();
+            DiscardPile = new DiscardPile();
+            Equipped = new Equipped();
+            FaceUp = new FaceUp();
+            Graveyard = new Graveyard();
+            Hand = new Hand();
         }
 
         /// <summary>
