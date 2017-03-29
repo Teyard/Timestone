@@ -28,15 +28,9 @@ namespace TimestoneView.Collection
         public int CountUnique { get { return cards.Keys.Count; } }
 
         /// <summary>
-        /// Get a dictionary containing all cards in the deck list such as { {SimpleCard card: int count}, ... }.
+        /// Get a readonly dictionary containing all cards in the deck list such as { {SimpleCard card: int count}, ... }.
         /// </summary>
-        public ReadOnlyDictionary<SimpleCard, int> GetCards
-        {
-            get
-            {
-                return new ReadOnlyDictionary<SimpleCard, int>(cards);
-            }
-        }
+        public ReadOnlyDictionary<SimpleCard, int> Cards { get; private set; }
 
         /// <summary>
         /// Get whether the deck is legally built or not.
@@ -85,6 +79,7 @@ namespace TimestoneView.Collection
         internal DeckList(HeroClass heroClass)
         {
             cards = new Dictionary<SimpleCard, int>();
+            Cards = new ReadOnlyDictionary<SimpleCard, int>(cards);
             IsLegalDescription = IS_LEGAL_DESC;
         }
 

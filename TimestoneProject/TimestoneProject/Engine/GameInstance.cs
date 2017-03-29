@@ -8,8 +8,11 @@ namespace TimestoneProject.Engine
 {
     public class GameInstance
     {
+        private List<SimpleCard> p1Deck, p2Deck;
+
         public Player PlayerOne { get; private set; }
         public Player PlayerTwo { get; private set; }
+        public Player CurrentPlayer { get; private set; }
 
         /// <summary>
         /// Create a new empty game instance.
@@ -21,6 +24,9 @@ namespace TimestoneProject.Engine
 
             PlayerOne.SetOpponent(PlayerTwo);
             PlayerTwo.SetOpponent(PlayerOne);
+
+            p1Deck = new List<SimpleCard>();
+            p2Deck = new List<SimpleCard>();
         }
 
         /// <summary>
@@ -31,13 +37,29 @@ namespace TimestoneProject.Engine
         /// <exception cref="ArgumentException"></exception>
         public void LoadDeckList(Player player, List<SimpleCard> deckList)
         {
-            if(!(player.Equals(PlayerOne) || player.Equals(PlayerTwo)))
+            if (player.Equals(PlayerOne))
+            {
+                p1Deck = deckList;
+            }
+            else if (player.Equals(PlayerTwo))
+            {
+                p2Deck = deckList;
+            }
+            else
             {
                 throw (new ArgumentException("Attempting to load a deck list for a player not currently owned by the game instance."));
             }
-
+            
 
         }
 
+        /// <summary>
+        /// Validates loading and gets the ball rolling.
+        /// </summary>
+        public void StartGame()
+        {
+            // pick a random player to go first
+            CurrentPlayer = RNGesus.Get.Next() % 2 == 0 ? PlayerOne : PlayerTwo;
+        }
     }
 }

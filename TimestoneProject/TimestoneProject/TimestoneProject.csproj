@@ -47,13 +47,26 @@
     <Compile Include="Data\Enums\EntityType.cs" />
     <Compile Include="Data\Enums\HeroClass.cs" />
     <Compile Include="Data\Enums\HeroPower.cs" />
+    <Compile Include="Data\Enums\MinionType.cs" />
     <Compile Include="Data\Enums\SpellType.cs" />
     <Compile Include="Data\Collection\SimpleCard.cs" />
     <Compile Include="Data\HeroPowers.cs" />
     <Compile Include="Engine\Entities\Cards\Card.cs" />
+    <Compile Include="Engine\Entities\Cards\Minion.cs" />
+    <Compile Include="Engine\Entities\Cards\Spell.cs" />
+    <Compile Include="Engine\Entities\Cards\Weapon.cs" />
     <Compile Include="Engine\Entities\Entity.cs" />
     <Compile Include="Engine\Entities\Player.cs" />
     <Compile Include="Engine\GameInstance.cs" />
+    <Compile Include="Engine\RNGesus.cs" />
+    <Compile Include="Engine\Zones\Deck.cs" />
+    <Compile Include="Engine\Zones\DiscardPile.cs" />
+    <Compile Include="Engine\Zones\Equipped.cs" />
+    <Compile Include="Engine\Zones\FaceUp.cs" />
+    <Compile Include="Engine\Zones\Graveyard.cs" />
+    <Compile Include="Engine\Zones\Hand.cs" />
+    <Compile Include="Engine\Zones\Removed.cs" />
+    <Compile Include="Engine\Zones\Zone.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
