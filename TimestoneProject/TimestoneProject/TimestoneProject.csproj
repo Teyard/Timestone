@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{86C345E7-1A14-4085-9EEB-0AE5922FE8D2}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TimestoneProject</RootNamespace>
     <AssemblyName>TimestoneProject</AssemblyName>
@@ -32,14 +32,31 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\TimestoneEngine\TimestoneEngine.csproj">
-      <Project>{6d5329ef-7e36-438a-b41e-17a6849f4cda}</Project>
-      <Name>TimestoneEngine</Name>
-    </ProjectReference>
+    <Compile Include="Data\Enums\CardRarity.cs" />
+    <Compile Include="Data\Enums\CardSet.cs" />
+    <Compile Include="Data\Enums\CardType.cs" />
+    <Compile Include="Data\Enums\DeckFormat.cs" />
+    <Compile Include="Data\Enums\EntityType.cs" />
+    <Compile Include="Data\Enums\HeroClass.cs" />
+    <Compile Include="Data\Enums\HeroPower.cs" />
+    <Compile Include="Data\Enums\SpellType.cs" />
+    <Compile Include="Data\Collection\SimpleCard.cs" />
+    <Compile Include="Data\HeroPowers.cs" />
+    <Compile Include="Engine\Entities\Cards\Card.cs" />
+    <Compile Include="Engine\Entities\Entity.cs" />
+    <Compile Include="Engine\Entities\Player.cs" />
+    <Compile Include="Engine\GameInstance.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
