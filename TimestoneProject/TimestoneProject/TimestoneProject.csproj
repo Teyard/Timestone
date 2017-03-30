@@ -40,6 +40,18 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Compile Include="Data\Cards.cs" />
+    <Compile Include="Data\Collection\CardSets\Basic.cs" />
+    <Compile Include="Data\Collection\CardSheetBase.cs" />
+    <Compile Include="Data\Collection\MinionSheet.cs" />
+    <Compile Include="Data\Collection\MinionSheetBase.cs" />
+    <Compile Include="Data\Collection\PermanentSheet.cs" />
+    <Compile Include="Data\Collection\QuestSheet.cs" />
+    <Compile Include="Data\Collection\SecretSheet.cs" />
+    <Compile Include="Data\Collection\SimpleFactory.cs" />
+    <Compile Include="Data\Collection\SpellSheet.cs" />
+    <Compile Include="Data\Collection\SpellSheetBase.cs" />
+    <Compile Include="Data\Collection\WeaponSheet.cs" />
     <Compile Include="Data\Enums\CardRarity.cs" />
     <Compile Include="Data\Enums\CardSet.cs" />
     <Compile Include="Data\Enums\CardType.cs" />
@@ -47,6 +59,7 @@
     <Compile Include="Data\Enums\EntityType.cs" />
     <Compile Include="Data\Enums\HeroClass.cs" />
     <Compile Include="Data\Enums\HeroPower.cs" />
+    <Compile Include="Data\Enums\MinionTribe.cs" />
     <Compile Include="Data\Enums\MinionType.cs" />
     <Compile Include="Data\Enums\SpellType.cs" />
     <Compile Include="Data\Collection\SimpleCard.cs" />
@@ -67,6 +80,7 @@
     <Compile Include="Engine\Zones\Graveyard.cs" />
     <Compile Include="Engine\Zones\Hand.cs" />
     <Compile Include="Engine\Zones\Zone.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

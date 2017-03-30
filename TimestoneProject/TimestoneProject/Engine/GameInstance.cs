@@ -66,9 +66,10 @@ namespace TimestoneProject.Engine
         public GameInstance()
         {
             // create players
+            players = new List<Player>();
             players.Add(new Player(this));
             players.Add(new Player(this));
-            PlayerList = new ReadOnlyCollection<Entities.Player>(players);
+            PlayerList = new ReadOnlyCollection<Player>(players);
 
             // assign opponents
             PlayerOne.SetOpponent(PlayerTwo);
@@ -168,6 +169,8 @@ namespace TimestoneProject.Engine
         /// </summary>
         /// <param name="player">The player.</param>
         /// <returns>A list of cards.</returns>
+        /// <exception cref="ArgumentException"></exception>
+        /// <exception cref="InvalidOperationException"></exception>
         public List<Card> GetMulliganOptions(Player player)
         {
             // make sure we have mulligans
@@ -191,18 +194,20 @@ namespace TimestoneProject.Engine
         /// <param name="player">The player.</param>
         /// <param name="card">The card.</param>
         /// <param name="keepIt">Whether or not to keep it. Initial state is true.</param>
+        /// <exception cref="ArgumentException"></exception>
+        /// <exception cref="InvalidOperationException"></exception>
         public void SetMulligan(Player player, Card card, bool keepIt)
         {
             // make sure we have mulligans
             if ((int)state < (int)GameState.Mulligan)
             {
-                throw new InvalidOperationException("Attempting to retrieve mulligan options before mulligan phase has taken place.");
+                throw new InvalidOperationException("Attempting to set a mulligan choice before mulligan phase has taken place.");
             }
 
             // make sure the player is part of this game instance
             if (!players.Contains(player))
             {
-                throw (new ArgumentException("Attempting to retrieve mulligan options for a player not currently owned by the game instance."));
+                throw (new ArgumentException("Attempting to set a mulligan choice for a player not currently owned by the game instance."));
             }
 
             mulligans[player][card] = keepIt;
@@ -212,6 +217,8 @@ namespace TimestoneProject.Engine
         /// Confirm the specified player's mulligan choices.
         /// </summary>
         /// <param name="player">The player.</param>
+        /// <exception cref="ArgumentException"></exception>
+        /// <exception cref="InvalidOperationException"></exception>
         public void ConfirmMulligan(Player player)
         {
             // make sure we have mulligans
